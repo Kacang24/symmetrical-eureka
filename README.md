@@ -1,34 +1,33 @@
-package com.stripe.sample;
+    package com.stripe.sample;
 
-import java.nio.file.Paths;
+    import java.nio.file.Paths;
 
-import static spark.Spark.get;
-import static spark.Spark.post;
-import static spark.Spark.staticFiles;
-import static spark.Spark.port;
+    import static spark.Spark.get;
+    import static spark.Spark.post;
+    import static spark.Spark.staticFiles;
+    import static spark.Spark.port;
 
-import com.google.gson.Gson;
-import com.google.gson.annotations.SerializedName;
+    import com.google.gson.Gson;
+    import com.google.gson.annotations.SerializedName;
 
-import com.stripe.Stripe;
-import com.stripe.model.PaymentIntent;
-import com.stripe.param.PaymentIntentCreateParams;
-import com.stripe.model.terminal.ConnectionToken;
-import com.stripe.param.terminal.ConnectionTokenCreateParams;
-import com.stripe.model.terminal.Location;
-import com.stripe.param.terminal.LocationCreateParams;
-import com.stripe.exception.StripeException;
+    import com.stripe.Stripe;
+    import com.stripe.model.PaymentIntent;
+    import com.stripe.param.PaymentIntentCreateParams;
+    import com.stripe.model.terminal.ConnectionToken;
+    import com.stripe.param.terminal.ConnectionTokenCreateParams;
+    import com.stripe.model.terminal.Location;
+    import com.stripe.param.terminal.LocationCreateParams;
+    import com.stripe.exception.StripeException;
 
-import java.util.Map;
-import java.util.HashMap;
+    import java.util.Map;
+    import java.util.HashMap;
 
-public class Server {
-  private static Gson gson = new Gson();
+    public class Server {
+    private static Gson gson = new Gson();
 
-  static class PaymentIntentParams {
+    static class PaymentIntentParams {
     private String id;
     private long amount;
-
     public String getID() {
       return id;
     }
