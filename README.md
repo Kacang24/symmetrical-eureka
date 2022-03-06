@@ -36,13 +36,8 @@ public class Server {
     public long getAmount() {
       return amount;
     }
-  }
-
-  public static void main(String[] args) {
-    port(4242);
-    staticFiles.externalLocation(Paths.get("public").toAbsolutePath().toString());
-
-    // This is your test secret API key.
+ 
+    // This is your live secret API key.
     Stripe.apiKey = "pk_live_51KR9pNHUhMG4O3VamYiVYmh7qnY7Nf2x5oaENOZuuP18t0FVoinvUzB04nRO6ahvwGDDlWmgkvA3WgWnblSRKNb6003D3B5r0V";
 
     // The ConnectionToken's secret lets you connect to any Stripe Terminal reader
@@ -91,10 +86,8 @@ public class Server {
 
       return intent.toJson();
     });
-  }
 
-
-  public static Location createLocation() throws StripeException{
+    public static Location createLocation() throws StripeException{
     LocationCreateParams.Address address =
     LocationCreateParams.Address.builder()
       .setLine1("33 cabernet cres")
@@ -112,7 +105,4 @@ public class Server {
 
     Location location = Location.create(params);
 
-    return location;
-  }
-
-}
+    return location;}
